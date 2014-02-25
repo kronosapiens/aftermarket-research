@@ -1,8 +1,3 @@
-aftermarket_research
-====================
-
-AfterMarket Research
-
 ---
 tags: craigslist, aftermarket, online commerce, nokogiri, web scraping
 language: ruby
