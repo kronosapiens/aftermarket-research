@@ -1,17 +1,17 @@
 require_relative 'spec_helper.rb'
 
-describe "CL_Scraper" do
+describe "Scraper" do
   before(:each) do
 # stuff
   end
 
-  let(:clr){CL_Runner.new}
+  let(:clr){Runner.new}
 
   let(:sample_search){"brk macbook pro 400 900"}
   let(:bad_query){"clkj llkjasd 3q kj4 32"}
 
-  let(:query){CL_Query.new.parse(sample_search)}
-  let(:cls){CL_Scraper.new(query)}
+  let(:query){Query.new.parse(sample_search)}
+  let(:cls){Scraper.new(query)}
 
   # let(:doc){Nokogiri::HTML(open('https://newyork.craigslist.org/search/sso/brk?zoomToPosting=&catAbb=sss&query=macbook+pro&minAsk=100&maxAsk=700&sort=rel&excats='))}
   let(:num_array){[1, 1, 1, 2, 4, 5, 7]}
@@ -21,12 +21,12 @@ describe "CL_Scraper" do
   end
 
   it 'creates an array of area keywords which can handle quotes' do
-    query = CL_Query.new.parse("que powerbook 15\" 0 1000")
+    query = Query.new.parse("que powerbook 15\" 0 1000")
     expect(cls.htmlify(query.search_query)).to eq("powerbook+15\"")
   end
 
   # it 'creates a nokogiri file from a page' do
-  #   nokogiri_page = cls.cl_scrape
+  #   nokogiri_page = cls.scrape
   #   File.write('spec/sample_scrapes/sample_scrape', nokogiri_page)
   #   expect(nokogiri_page).to include("craigslist")
   # end

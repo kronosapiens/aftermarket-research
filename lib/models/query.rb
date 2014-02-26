@@ -1,4 +1,4 @@
-class CL_Query
+class Query
 
   attr_accessor :keyword, :search_query, :min_price, :max_price
 
@@ -12,7 +12,7 @@ class CL_Query
   end
 
   def valid_query?
-    CL_Runner.keywords.keys.include?(self.keyword) && self.search_query.is_a?(String) && self.max_price.is_a?(Integer) && self.min_price.is_a?(Integer)
+    Runner.keywords.keys.include?(self.keyword) && self.search_query.is_a?(String) && self.max_price.is_a?(Integer) && self.min_price.is_a?(Integer)
   end
 
 end

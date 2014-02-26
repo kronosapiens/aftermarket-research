@@ -5,6 +5,6 @@ require 'open-uri'
 
 Bundler.require
 
-require_relative '../lib/models/cl_scraper.rb'
-require_relative '../lib/models/cl_query.rb'
-require_relative '../lib/models/cl_runner.rb'
+require_relative '../lib/models/scraper.rb'
+require_relative '../lib/models/query.rb'
+require_relative '../lib/models/runner.rb'

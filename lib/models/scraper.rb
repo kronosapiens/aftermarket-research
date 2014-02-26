@@ -1,4 +1,4 @@
-class CL_Scraper
+class Scraper
 
   attr_accessor :query, :pages_array
 
@@ -7,7 +7,7 @@ class CL_Scraper
     self.pages_array = []
   end
 
-  def cl_scrape
+  def scrape
   # doc = Nokogiri::HTML(open('https://newyork.craigslist.org/search/sss/brk?zoomToPosting=&catAbb=sss&#{htmlify(query.search_query)}&minAsk=100&maxAsk=700&sort=rel&excats=').read)
   # html = open("https://newyork.craigslist.org/search/sso/#{query.keyword}?zoomToPosting=&catAbb=sso&query=#{htmlify(query.search_query)}&minAsk=#{query.min_price}&maxAsk=#{query.max_price}&srchType=T&excats=")
   encoded_url = URI.encode("https://newyork.craigslist.org/search/sss/#{query.keyword}?zoomToPosting=&catAbb=sss&query=#{htmlify(query.search_query)}&minAsk=#{query.min_price}&maxAsk=#{query.max_price}&sort=rel&excats=")
@@ -59,7 +59,7 @@ class CL_Scraper
   def print_calculations(calc_array)
     # puts "Search complete!"
     puts "Search complete!"
-    # puts "Based on your search for #{query.search_query} in #{CL_Runner.keywords[query.keyword]} with a minimum price of #{query.min_price} and a maximum price of #{query.max_price}"
+    # puts "Based on your search for #{query.search_query} in #{Runner.keywords[query.keyword]} with a minimum price of #{query.min_price} and a maximum price of #{query.max_price}"
     puts "The mean price for your search is #{calc_array[0]}"
     puts "The median price for your search is #{calc_array[1]}"
     puts "The mode price for your search is #{calc_array[2]}"

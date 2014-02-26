@@ -1,11 +1,11 @@
 require_relative 'spec_helper.rb'
 
-describe "CL_Query" do
+describe "Query" do
   before(:each) do
 # stuff
 end
 
-let(:clq){CL_Query.new}
+let(:clq){Query.new}
 let(:sample_query){"brk macbook pro 400 900"}
 let(:bad_query){"clkj llkjasd 3q kj4 32"}
 
