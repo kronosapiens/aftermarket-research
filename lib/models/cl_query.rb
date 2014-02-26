@@ -4,7 +4,6 @@ class CL_Query
 
   def parse(query_string)
     query_array = query_string.split(" ")
-    # binding.pry
     self.keyword = query_array.shift
     self.max_price = query_array.pop.to_i
     self.min_price = query_array.pop.to_i

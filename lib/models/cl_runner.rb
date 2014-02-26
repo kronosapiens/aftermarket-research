@@ -33,8 +33,10 @@ class CL_Runner
       # binding.pry
       if query.valid_query?
         puts "running search..."
-        "valid query"
-        # CL_Scraper.new(query)
+        puts
+        cls = CL_Scraper.new(query)
+        cls.cl_scrape
+        cls.analyze
       elsif query.keyword == "help"
         help
       elsif query.keyword == "exit"
