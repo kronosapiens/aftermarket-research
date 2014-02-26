@@ -34,5 +34,4 @@ it 'recognizes a bad query' do
   expect(clq.valid_query?).to eq(false)
 end
 
-
 end

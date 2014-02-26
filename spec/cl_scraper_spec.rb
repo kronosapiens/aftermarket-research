@@ -6,19 +6,23 @@ describe "CL_Scraper" do
   end
 
   let(:clr){CL_Runner.new}
-  let(:clq){CL_Query.new}
 
   let(:sample_search){"brk macbook pro 400 900"}
   let(:bad_query){"clkj llkjasd 3q kj4 32"}
 
-  let(:query){clq.parse(sample_search)}
+  let(:query){CL_Query.new.parse(sample_search)}
   let(:cls){CL_Scraper.new(query)}
 
-  let(:doc){Nokogiri::HTML(open('https://newyork.craigslist.org/search/sso/brk?zoomToPosting=&catAbb=sss&query=macbook+pro&minAsk=100&maxAsk=700&sort=rel&excats='))}
+  # let(:doc){Nokogiri::HTML(open('https://newyork.craigslist.org/search/sso/brk?zoomToPosting=&catAbb=sss&query=macbook+pro&minAsk=100&maxAsk=700&sort=rel&excats='))}
   let(:num_array){[1, 1, 1, 2, 4, 5, 7]}
 
   it 'creates an array of area keywords as a class method' do
     expect(cls.htmlify(query.search_query)).to eq("macbook+pro")
+  end
+
+  it 'creates an array of area keywords which can handle quotes' do
+    query = CL_Query.new.parse("que powerbook 15\" 0 1000")
+    expect(cls.htmlify(query.search_query)).to eq("powerbook+15\"")
   end
 
   # it 'creates a nokogiri file from a page' do
@@ -27,7 +31,7 @@ describe "CL_Scraper" do
   #   expect(nokogiri_page).to include("craigslist")
   # end
 
-  it 'returns an array of integers' do
+  xit 'returns an array of integers' do
     num_array = cls.number_extraction(doc)
     expect(num_array[0]).to be_a(Integer)
   end
@@ -52,7 +56,7 @@ describe "CL_Scraper" do
     expect(analysis.length).to be(3)
   end
 
-  it 'prints the results of the analysis' do
+  xit 'prints the results of the analysis' do
     analysis = cls.calculate(num_array)
     expect($stdout).to receive(:puts).with("Search complete!")
     cls.print_calculations(analysis)

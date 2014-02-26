@@ -10,14 +10,20 @@ class CL_Scraper
   def cl_scrape
   # doc = Nokogiri::HTML(open('https://newyork.craigslist.org/search/sss/brk?zoomToPosting=&catAbb=sss&#{htmlify(query.search_query)}&minAsk=100&maxAsk=700&sort=rel&excats=').read)
   # html = open("https://newyork.craigslist.org/search/sso/#{query.keyword}?zoomToPosting=&catAbb=sso&query=#{htmlify(query.search_query)}&minAsk=#{query.min_price}&maxAsk=#{query.max_price}&srchType=T&excats=")
-  html = open("https://newyork.craigslist.org/search/sss/#{query.keyword}?zoomToPosting=&catAbb=sss&query=#{htmlify(query.search_query)}&minAsk=#{query.min_price}&maxAsk=#{query.max_price}&sort=rel&excats=")
+  encoded_url = URI.encode("https://newyork.craigslist.org/search/sss/#{query.keyword}?zoomToPosting=&catAbb=sss&query=#{htmlify(query.search_query)}&minAsk=#{query.min_price}&maxAsk=#{query.max_price}&sort=rel&excats=")
+  uri = URI.parse(encoded_url)
+  html = open(uri)
   self.pages_array << Nokogiri::HTML(html.read)
   end
 
   def analyze
     num_array = number_extraction(pages_array[0])
-    calc_array = calculate(num_array)
-    print_calculations(calc_array)
+    if !num_array.empty?
+      calc_array = calculate(num_array)
+      print_calculations(calc_array)
+    else
+      puts "Sorry, your search returned no results."
+    end
   end
 
   def number_extraction(page)
@@ -51,8 +57,9 @@ class CL_Scraper
   end
 
   def print_calculations(calc_array)
+    # puts "Search complete!"
     puts "Search complete!"
-    puts "Based on your search for #{query.search_query} in #{CL_Runner.keywords[query.keyword]} with a minimum price of #{query.min_price} and a maximum price of #{query.max_price}"
+    # puts "Based on your search for #{query.search_query} in #{CL_Runner.keywords[query.keyword]} with a minimum price of #{query.min_price} and a maximum price of #{query.max_price}"
     puts "The mean price for your search is #{calc_array[0]}"
     puts "The median price for your search is #{calc_array[1]}"
     puts "The mode price for your search is #{calc_array[2]}"
