@@ -63,7 +63,7 @@ class Runner
   end
 
   def help
-    puts "Run a search by writing four query terms, as follows:"
+    puts "Run a craigslist search by including four query terms, as follows:"
     puts
     puts "FIRST, the area key -- #{Runner.keywords} "
     # area_array = keywords.each_with_object([]) {|key, value, array| array << "#{key}: #{value}"} 

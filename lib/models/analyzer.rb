@@ -23,7 +23,7 @@ class Analyzer
   end
 
   def print_calculations
-    puts "Analysis complete, based on #{num_array.length} listings!"
+    puts "Analysis complete, based on #{num_array.length} craigslist listings!"
     puts "The mean price for your search is #{mean}"
     puts "The median price for your search is #{median}"
     puts "The mode price for your search is #{mode}"
