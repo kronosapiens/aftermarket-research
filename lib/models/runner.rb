@@ -34,9 +34,21 @@ class Runner
       if query.valid_query?
         puts "running search..."
         puts
-        cls = Scraper.new(query)
-        cls.scrape
-        cls.analyze
+        scraper = Scraper.new(query)
+        scraper.scrape
+        if scraper.product_rows.length > 0
+          analyzer = Analyzer.new(scraper.number_extraction)
+          analyzer.print_calculations
+          # puts
+          # puts "Would you like to see your search results? (Y/n)"
+          # to_web = gets.chomp.downcase
+          # if to_web == "y"
+          #   binding.pry
+          #   scraper.open_url
+          # end
+        else
+          puts "Sorry, your search returned no results."
+        end
       elsif query.keyword == "help"
         help
       elsif query.keyword == "exit"
