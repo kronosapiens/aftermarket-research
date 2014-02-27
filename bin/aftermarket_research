@@ -1,4 +1,3 @@
 #!/usr/bin/env ruby
 
 require 'aftermarket_research'
-aftermarket_research
