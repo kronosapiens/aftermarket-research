@@ -1,7 +1,8 @@
-require 'bundler/setup'
 require 'open-uri'
+require 'nokogiri'
 
-Bundler.require
+# require 'bundler/setup'
+# Bundler.require
 
 require_relative 'scraper.rb'
 require_relative 'query.rb'

@@ -1,3 +1,9 @@
+PATH
+  remote: .
+  specs:
+    aftermarket_research (1.0.1)
+      nokogiri (~> 1.6)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -25,6 +31,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  aftermarket_research!
   nokogiri
   pry
   rspec
