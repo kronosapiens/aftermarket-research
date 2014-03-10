@@ -1,3 +1,5 @@
 #!/usr/bin/env ruby
 
-require 'aftermarket_research'
+require_relative 'environment.rb'
+
+Runner.new.interface

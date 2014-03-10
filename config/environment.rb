@@ -1,6 +1,4 @@
 require 'bundler/setup'
-require 'erb'
-require 'pry'
 require 'open-uri'
 
 Bundler.require

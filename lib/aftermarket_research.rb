@@ -1,3 +1,1 @@
-require_relative 'environment.rb'
-
-Runner.new.interface
+require_relative "../config/environment.rb"

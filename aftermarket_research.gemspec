@@ -10,7 +10,7 @@ Gem::Specification.new do |s|
  'https://github.com/kronosapiens/aftermarket_research'
  s.license = 'GNU GPL V2'
  s.add_runtime_dependency "nokogiri", ["~> 1.6"]
- s.files = Dir['lib/*.rb'] + Dir['bin/*']
+ s.files = Dir['lib/*.rb'] + Dir['bin/*'] + Dir['config/*']
  s.executables = 'aftermarket_research'
 
 end
