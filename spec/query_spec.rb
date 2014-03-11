@@ -11,7 +11,7 @@ describe "Query" do
   end
 
   it 'can be initialized with a hash of values' do
-    query = Query.new({:search_query => "floor lamp"})
+    query = Query.new({"search_query" => "floor lamp"})
     expect(query.keyword).to eq("nyc")
     expect(query.search_query).to eq("floor lamp")
   end

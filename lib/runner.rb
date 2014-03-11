@@ -24,13 +24,6 @@ class Runner
         if scraper.product_rows.length > 0
           analyzer = Analyzer.new(scraper.number_extraction)
           analyzer.print_calculations
-          # puts
-          # puts "Would you like to see your search results? (Y/n)"
-          # to_web = gets.chomp.downcase
-          # if to_web == "y"
-          #   binding.pry
-          #   scraper.open_url
-          # end
         else
           puts "Sorry, your search returned no results."
         end
