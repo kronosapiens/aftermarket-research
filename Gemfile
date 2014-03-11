@@ -1,7 +1,10 @@
 source 'https://rubygems.org'
 
-gem "rspec"
-gem "pry"
 gem "nokogiri"
+
+group :development do
+  gem "rspec"
+  gem "pry"
+end
 
 gemspec

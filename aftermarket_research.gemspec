@@ -1,7 +1,7 @@
 Gem::Specification.new do |s|
  s.name = 'aftermarket_research'
- s.version = '1.0.1'
- s.date = '2014-02-28'
+ s.version = '1.1.0'
+ s.date = '2014-03-10'
  s.summary = "Aftermarket Research from your Terminal"
  s.description = "Research and analyze second-hand price information through Craiglist"
  s.authors = ["Daniel Kronovet"]
@@ -12,7 +12,6 @@ Gem::Specification.new do |s|
  s.add_runtime_dependency "nokogiri", ["~> 1.6"]
  s.files = Dir['lib/*.rb'] + Dir['bin/*'] + Dir['config/*']
  s.executables = 'aftermarket_research'
-
 end
 
  # s.files         = `git ls-files`.split($/)
