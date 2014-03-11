@@ -1,20 +1,5 @@
 class Runner
 
-  def self.keywords
-    {
-      "mnh" => "Manhattan",
-      "brk" => "Brooklyn",
-      "que" => "Queens",
-      "brx" => "The Bronx",
-      "stn" => "Staten Island",
-      "jsy" => "New Jersey",
-      "lgi" => "Long Island",
-      "wch" => "Westchester",
-      "fct" => "Fairfield",
-      "nyc" => "New York City",
-    }
-  end
-
   def interface
     on = true
 
@@ -65,7 +50,7 @@ class Runner
   def help
     puts "Run a craigslist search by including four query terms, as follows:"
     puts
-    puts "FIRST, the area key -- #{Runner.keywords} "
+    puts "FIRST, the area key -- #{Query.keywords} "
     # area_array = keywords.each_with_object([]) {|key, value, array| array << "#{key}: #{value}"} 
     puts
     puts "NEXT, your actual search. Feel free to format however you like, but please write it in quotes."

@@ -6,6 +6,10 @@ describe "Query" do
   let(:sample_query){"brk macbook pro 400 900"}
   let(:bad_query){"clkj llkjasd 3q kj4 32"}
 
+  it 'creates an array of area keywords as a class method' do
+    expect(Query.keywords.keys).to include("brk")
+  end
+
   it 'can parse a query keyword' do
     query.parse(sample_query)
     expect(query.keyword).to eq("brk")

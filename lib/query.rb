@@ -2,6 +2,21 @@ class Query
 
   attr_accessor :keyword, :search_query, :min_price, :max_price
 
+  def self.keywords
+    {
+      "mnh" => "Manhattan",
+      "brk" => "Brooklyn",
+      "que" => "Queens",
+      "brx" => "The Bronx",
+      "stn" => "Staten Island",
+      "jsy" => "New Jersey",
+      "lgi" => "Long Island",
+      "wch" => "Westchester",
+      "fct" => "Fairfield",
+      "nyc" => "New York City",
+    }
+  end
+
   def parse(query_string)
     query_array = query_string.split(" ")
     self.keyword = query_array.shift
@@ -12,7 +27,7 @@ class Query
   end
 
   def valid_query?
-    Runner.keywords.keys.include?(self.keyword) && self.search_query.is_a?(String) && self.max_price.is_a?(Integer) && self.min_price.is_a?(Integer)
+    Query.keywords.keys.include?(self.keyword) && self.search_query.is_a?(String) && self.max_price.is_a?(Integer) && self.min_price.is_a?(Integer)
   end
 
   def keyword_to_url
