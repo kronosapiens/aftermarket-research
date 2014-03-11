@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    aftermarket_research (1.1.2)
+    aftermarket_research (1.1.3)
       nokogiri (~> 1.6)
 
 GEM
