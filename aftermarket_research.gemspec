@@ -1,6 +1,6 @@
 Gem::Specification.new do |s|
  s.name = 'aftermarket_research'
- s.version = '1.1.1'
+ s.version = '1.1.2'
  s.date = '2014-03-10'
  s.summary = "Aftermarket Research from your Terminal"
  s.description = "Research and analyze second-hand price information through Craiglist"

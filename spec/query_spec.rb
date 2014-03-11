@@ -10,6 +10,18 @@ describe "Query" do
     expect(Query.keywords.keys).to include("brk")
   end
 
+  it 'can be initialized with a hash of values' do
+    query = Query.new({:search_query => "floor lamp"})
+    expect(query.keyword).to eq("nyc")
+    expect(query.search_query).to eq("floor lamp")
+  end
+
+  it 'can be initialized with no values' do
+    expect(query.keyword).to eq("nyc")
+    expect(query.search_query).to eq("bookshelf")
+    expect(query.max_price).to eq(2000)
+  end
+
   it 'can parse a query keyword' do
     query.parse(sample_query)
     expect(query.keyword).to eq("brk")

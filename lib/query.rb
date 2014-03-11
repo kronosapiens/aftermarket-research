@@ -17,6 +17,13 @@ class Query
     }
   end
 
+  def initialize(args = {})
+    @keyword = args.fetch(:keyword, "nyc")
+    @search_query = args.fetch(:search_query, "bookshelf")
+    @min_price = args.fetch(:min_price, 0)
+    @max_price = args.fetch(:max_price, 2000)
+  end
+
   def parse(query_string)
     query_array = query_string.split(" ")
     self.keyword = query_array.shift
