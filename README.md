@@ -6,6 +6,7 @@ language: ruby
 # AfterMarket Research
 
 [![Gem Version](https://badge.fury.io/rb/aftermarket_research.png)](http://badge.fury.io/rb/aftermarket_research)
+[![Code Climate](https://codeclimate.com/github/kronosapiens/aftermarket_research.png)](https://codeclimate.com/github/kronosapiens/aftermarket_research)
 
 This gem is meant to provide a Command-Line Interface for running simple market research queries on Craigslist.
 
