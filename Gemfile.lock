@@ -56,3 +56,4 @@ DEPENDENCIES
   nokogiri
   pry
   rspec
+  simplecov
