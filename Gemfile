@@ -7,4 +7,7 @@ group :development do
   gem "pry"
 end
 
+#Using Coveralls for test coverage reporting
+gem 'coveralls', require: false
+
 gemspec
