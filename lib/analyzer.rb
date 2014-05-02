@@ -22,8 +22,8 @@ class Analyzer
     self.num_array.max_by { |v| freq[v] }
   end
 
-  def auto_tune
-    benchmark = mean / 2.0
+  def autotune
+    benchmark = mean / 2
 
     if num_array.length <= 10
       self.new_min = false

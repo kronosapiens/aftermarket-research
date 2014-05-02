@@ -1,6 +1,6 @@
 class Query
 
-  attr_accessor :keyword, :search_query, :min_price, :max_price
+  attr_accessor :keyword, :search_query, :min_price, :max_price, :autotune
 
   def self.keywords
     {
@@ -22,11 +22,13 @@ class Query
     @search_query = args.fetch("search_query", "bookshelf")
     @min_price = args.fetch("min_price", 0)
     @max_price = args.fetch("max_price", 2000)
+    @autotune = args.fetch("autotune", false)
   end
 
   def parse(query_string)
     query_array = query_string.split(" ")
     self.keyword = query_array.shift
+    
     self.max_price = query_array.pop.to_i
     self.min_price = query_array.pop.to_i
     self.search_query = query_array.join(" ")
